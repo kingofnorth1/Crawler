@@ -13,6 +13,7 @@ def func(sum):
     if not os.path.exists('./4k高清美女'):
         os.mkdir('./4k高清美女')
     url = 'https://pic.netbian.com/4kmeinv/' + 'index_' + sum + '.html'
+    print(url)
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36 Edg/95.0.1020.53'
     }

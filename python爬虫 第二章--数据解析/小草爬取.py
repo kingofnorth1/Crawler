@@ -4,7 +4,7 @@
 # 开发人员：&杜乾坤
 # 开发工具：&pycharm
 import requests
-import re
+from bs4 import BeautifulSoup
 import os
 
 def func(sum):
@@ -18,26 +18,9 @@ def func(sum):
 
     # 使用通用爬虫对url对应一整页面进行爬取
     page_text = requests.get(url=url, headers=headers).text
+    soup = BeautifulSoup(page_text,'lxml')
+    img = soup.select('.idstpc > br')
 
     # 使用聚焦爬虫对页面解析
-    ex = '<img src=".*?"data-url="(.*?)" border="0">'
-    img_src_list = re.findall(ex, page_text, re.S)
-    # print(img_src_list)
-    for str in img_src_list:
-        # 拼接出一个完整的图片url
-        # 请求到图片的二进制数据
-        img_data = requests.get(url=str, headers=headers).content
-        # 生成图片名称
-        img_name = str.split('/')[-1]
-        # 图片储存的路径
-        imgPath = './小草/' + img_name
-        with open(imgPath, 'wb') as fp:
-            fp.write(img_data)
-            print(img_name, '下载成功！')
+    fp = open('./小草/草图','wb')
 
-if __name__ == "__main__":
-    sum = int(input("请输入需要遍历的页数:"))
-    sum += 1
-    for n in range(1, sum):
-        n = str(n)
-        func(n)

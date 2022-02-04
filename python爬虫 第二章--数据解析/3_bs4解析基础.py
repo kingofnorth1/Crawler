@@ -13,7 +13,7 @@ if __name__ == "__main__":
     #print(soup.a)
     #print(soup.div)
     #print(soup.find('div'))
-    #print(soup.find('div', class_="mark_card"))
+    print(soup.find('div', class_="mark_card").text)
     #print(soup.select('.mark_card'))
-    print(soup.select('.mark_card > a > img')[0]['src'])
+    #print(soup.select('.mark_card > a > img')[0]['src'])
 
