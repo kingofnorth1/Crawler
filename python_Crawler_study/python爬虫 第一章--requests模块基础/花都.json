@@ -1,0 +1,89 @@
+{
+     "Table": [
+          {
+               "rowcount": 10
+          }
+     ],
+     "Table1": [
+          {
+               "rownum": 1,
+               "storeName": "花都广百",
+               "addressDetail": "凤凰北路与龙珠路交汇处广百新一城A区首二层",
+               "pro": "24小时,Wi-Fi,点唱机,店内参观,礼品卡,生日餐会",
+               "provinceName": "广东省",
+               "cityName": "广州市"
+          },
+          {
+               "rownum": 2,
+               "storeName": "花都百业广场",
+               "addressDetail": "新华镇公益路百业广场首层",
+               "pro": "Wi-Fi,点唱机,礼品卡,生日餐会",
+               "provinceName": "广东省",
+               "cityName": "广州市"
+          },
+          {
+               "rownum": 3,
+               "storeName": "北兴DT",
+               "addressDetail": "北兴镇花都大道南17号",
+               "pro": "24小时,Wi-Fi,点唱机,店内参观,礼品卡",
+               "provinceName": "广东省",
+               "cityName": "广州市"
+          },
+          {
+               "rownum": 4,
+               "storeName": "狮岭东升餐厅",
+               "addressDetail": "花都区狮岭镇盘古路金炜达商业楼首、二层",
+               "pro": "24小时,礼品卡,生日餐会",
+               "provinceName": "广东省",
+               "cityName": "广州市"
+          },
+          {
+               "rownum": 5,
+               "storeName": "花都龙珠",
+               "addressDetail": "凤凰路龙珠路交叉口大润发超市首层",
+               "pro": "24小时,礼品卡,生日餐会",
+               "provinceName": "广东省",
+               "cityName": "广州市"
+          },
+          {
+               "rownum": 6,
+               "storeName": "永发",
+               "addressDetail": "花都永发路14号",
+               "pro": "24小时,Wi-Fi,点唱机,店内参观,生日餐会",
+               "provinceName": "广东省",
+               "cityName": "广州市"
+          },
+          {
+               "rownum": 7,
+               "storeName": "花都融创肯德基",
+               "addressDetail": "凤凰北路63号融创商业中心2059号商铺",
+               "pro": "Wi-Fi,点唱机,店内参观",
+               "provinceName": "广东省",
+               "cityName": "广州市"
+          },
+          {
+               "rownum": 8,
+               "storeName": "相城活力岛",
+               "addressDetail": "聚茂街198号水韵花都家园42号楼一层L113、L114商铺",
+               "pro": "Wi-Fi,点唱机,店内参观",
+               "provinceName": "江苏省",
+               "cityName": "苏州市"
+          },
+          {
+               "rownum": 9,
+               "storeName": "新城吾悦",
+               "addressDetail": "金山桥街道新城.国际花都小区商业中心望城新城吾悦广场1027号商铺",
+               "pro": "Wi-Fi,点唱机,店内参观,生日餐会",
+               "provinceName": "湖南省",
+               "cityName": "长沙市"
+          },
+          {
+               "rownum": 10,
+               "storeName": "新城吾悦",
+               "addressDetail": "金山桥街道新城.国际花都小区商业中心望城新城吾悦广场1027号商铺",
+               "pro": "Wi-Fi,点唱机,店内参观,生日餐会",
+               "provinceName": "湖南省",
+               "cityName": "长沙市"
+          }
+     ]
+}

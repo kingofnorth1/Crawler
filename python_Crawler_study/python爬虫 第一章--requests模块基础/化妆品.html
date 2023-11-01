@@ -1,0 +1,146 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtr">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>中华人民共和国化妆品生产许可证</title>
+	<script language="javascript" type="text/javascript">
+       var G = {"baseUrl":"http://scxk.nmpa.gov.cn:81/xk/"};
+    </script>
+	<script src="http://scxk.nmpa.gov.cn:81/xk/itownet/_static/common/jquery/jquery-1.7.1.min.js"  type="text/javascript" charset="utf-8"></script>
+	<script	src="http://scxk.nmpa.gov.cn:81/xk/itownet/_static/common/jquery/plugins/jquery.cookie.js"	type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" href="pz_gg.css" type="text/css" />
+    <link rel="stylesheet" href="http://scxk.nmpa.gov.cn:81/xk/itownet/portal/pz_portal.css" type="text/css" />
+    <script type="text/javascript">
+$(function() {
+	$.ajax({
+		url : G.baseUrl + "itownet/portalAction.do?method=getXkzsById",
+		dataType : "JSON",
+		type : "POST",
+		data : {
+			id : "af4832c505b749dea76e22a193f873c6"
+		},
+		error : function() {			 
+			alert('请求出现异常');
+		},
+		success : function(result) {
+			$("#epsName").text(result.epsName);
+			$("#epsAddress").text(result.epsAddress);
+			$("#business_license_number").text(result.businessLicenseNumber);
+			$("#epsProductAddress").text(result.epsProductAddress);
+			$("#legal_person").text(result.legalPerson);
+			$("#business_person").text(result.businessPerson);
+			$("#quality_person").text(result.qualityPerson);
+			$("#xkRemark").text(result.xkRemark);
+			$("#qfManagerName").text(result.qfManagerName);
+			$("#xkName").text(result.xkName);
+			 
+			$("#rcManagerName").text(result.rcManagerDepartName);
+			$("#rc_manager_user").text(result.rcManagerUser);
+			$("#xk_complete_date").text(result.xkDateStr);
+			$("#xk_date").text(result.xkDate);
+			$("#productSn").text(result.productSn);
+			$("#certStr_div").html(result.certStr);//注意是text
+			 
+			if($.trim(result.offDate) !=""){
+				$("#xk_type").html("<b style='color:#ff0000;'>已注销（"+result.offDate+"）</b>");
+			}else{
+				$("#xk_type").html("正常");
+			}
+		}
+	});
+});
+
+</script>
+</head>
+<body>
+	<div class="pzbanner"></div>
+
+	<div class="pztit">
+		<span>投诉举报电话：12331</span>化妆品生产许可证信息
+	</div>
+	<div class="pztit2">
+		<span><a onclick=javascript:window.close(); href="javascript:;">【关闭窗口】</a></span>&nbsp;
+	</div>
+	<div class="pzlist">
+		<div class="pzzhang" style="display: none;"></div>
+		
+		<table cellspacing="0" cellpadding="10"  width="100%" class="xxxx"  >
+			<tr>
+				<td class="appth"  align="right">企业名称：</td>
+				<td class="apptr_2"  align="left" id="epsName" ></td>
+			</tr>
+			<tr>
+				<td class="appth"  align="right">许可证编号：</td>
+				<td class="apptr_2"  align="left" id="productSn" ></td>
+			</tr>
+			<tr>
+				<td class="appth"  align="right">许可项目：</td>
+				<td class="apptr_2"  align="left" id="certStr_div"></td>
+			</tr>
+			<tr>
+				<td class="appth"  align="right">企业住所：</td>
+				<td class="apptr_2"  align="left" id="epsAddress"></td>
+			</tr>
+			<tr>
+				<td class="appth"  align="right">生产地址：</td>
+				<td class="apptr_2"  align="left" id="epsProductAddress"></td>
+			</tr>
+			<tr>
+				<td class="appth"  align="right">社会信用代码：</td>
+				<td class="apptr_2"  align="left" id="business_license_number"></td>
+			</tr>
+			<tr>
+				<td class="appth"  align="right">法定代表人：</td>
+				<td class="apptr_2"  align="left" id="legal_person"></td>
+			</tr>
+			<tr>
+				<td class="appth"  align="right">企业负责人：</td>
+				<td class="apptr_2"  align="left" id="business_person"></td>
+			</tr>
+			<tr>
+				<td class="appth"  align="right">质量负责人：</td>
+				<td class="apptr_2"  align="left" id="quality_person"></td>
+			</tr>
+			<tr>
+				<td class="appth"  align="right">发证机关：</td>
+				<td class="apptr_2"  align="left" id="qfManagerName"></td>
+			</tr>
+			<tr>
+				<td class="appth"  align="right">签发人：</td>
+				<td class="apptr_2"  align="left" id="xkName"></td>
+			</tr>
+			<tr>
+				<td class="appth"  align="right">日常监督管理机构：</td>
+				<td class="apptr_2"  align="left" id="rcManagerName"></td>
+			</tr>
+			<tr>
+				<td class="appth"  align="right">日常监督管理人员：</td>
+				<td class="apptr_2"  align="left" id="rc_manager_user"></td>
+			</tr>
+			<tr>
+				<td class="appth"  align="right">有效期至：</td>
+				<td class="apptr_2"  align="left" id="xk_date"></td>
+			</tr>
+			<tr>
+				<td class="appth"  align="right">发证日期：</td>
+				<td class="apptr_2"  align="left" id="xk_complete_date"></td>
+			</tr>
+			<tr>
+				<td class="appth"  align="right">状态：</td>
+				<td class="apptr_2"  align="left" id="xk_type"></td>
+			</tr>
+			<tr>
+				<td class="appth"   align="right">投诉举报电话：</td>
+				<td class="apptr_2"  align="left">12331</td>
+			</tr>
+		</table>
+	</div>
+
+	<div class="hzbbtm">
+		本站由<a href="http://www.sfda.gov.cn/WS01/CL0479/" target="_blank">国家药品监督管理局</a>主办
+		版权所有 未经许可禁止转载或建立镜像 Copyright &copy; NMPA All Rights Reserved
+	</div>
+</body>
+</html>
