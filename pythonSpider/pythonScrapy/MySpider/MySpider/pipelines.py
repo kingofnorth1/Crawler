@@ -5,16 +5,17 @@
 
 
 # useful for handling different item types with a single interface
+import pymysql as pymysql
 from itemadapter import ItemAdapter
 from openpyxl import Workbook
-import pymysql
 from loguru import logger
+
 
 class DbSpiderPipeline:
     def __init__(self):
         self.conn = pymysql.connect(host='localhost', port=3306,
                                     user='root', password='123456',
-                                    database='demo', charset='utf8mb3')
+                                    database='demo', charset='utf8mb4')
         self.cursor = self.conn.cursor()
         self.data = []
 
@@ -30,7 +31,9 @@ class DbSpiderPipeline:
         title = item.get('title', '')
         rank = item.get('rank', '0')
         subject = item.get('subject', '')
-        self.data.append((title, rank, subject))
+        duration = item.get('duration', '')
+        intro = item.get('intro', '')
+        self.data.append((title, rank, subject, duration, intro))
         if len(self.data) == 100:
             self._write_data()
         # sql = "insert into db_top_movie(title, rating, subject) values(%s, %s, %s)"
@@ -38,9 +41,10 @@ class DbSpiderPipeline:
         return item
 
     def _write_data(self):
-        sql = "insert into db_top_movie(title, rating, subject) values(%s, %s, %s)"
+        sql = "insert into db_top_movie(title, rating, subject, duration, intro) values(%s, %s, %s, %s, %s)"
         self.cursor.executemany(sql, self.data)
         self.conn.commit()
+        self.data = []
 
 
 class MySpiderPipeline:
@@ -48,7 +52,7 @@ class MySpiderPipeline:
         self.wd = Workbook()
         self.ws = self.wd.active
         self.ws.title = "top250"
-        self.ws.append(('标题', "评分", "主题"))
+        self.ws.append(('标题', "评分", "主题", "时长", "介绍"))
 
     # def open_spider(self):
     #     pass
@@ -58,8 +62,10 @@ class MySpiderPipeline:
 
     def process_item(self, item, spider):
         title = item.get('title', '')
-        rank = item.get('rank', '')
+        rank = item.get('rank', '0')
         subject = item.get('subject', '')
-        self.ws.append((title, rank, subject))
+        duration = item.get('duration', '0')
+        intro = item.get('intro', '')
+        self.ws.append((title, rank, subject, duration, intro))
         # self.ws.append((item['title'], item['rank'], item['subject']))
         return item

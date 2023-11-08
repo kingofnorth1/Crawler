@@ -9,6 +9,21 @@ from scrapy import signals, Request
 from itemadapter import is_item, ItemAdapter
 
 
+def get_cookie_dist():
+    cookie_str = 'viewed="35081743"; bid=wklddPTlkAo; ll="118318"; ap_v=0,6.0; dbcl2="250285709:Vh5Qlo1+4kw"; ck=bJiD; push_noty_num=0; push_doumail_num=0'
+    cookie_dist = {}
+    for item in cookie_str.split('; '):
+        key, value = item.split('=', maxsplit=1)
+        if '"' in value:
+            value = value[1:-1]
+        cookie_dist[key] = value
+    print(cookie_dist)
+    return cookie_dist
+
+
+COOKIE_DIST = get_cookie_dist()
+
+
 class MyspiderSpiderMiddleware:
     # Not all methods need to be defined. If a method is not defined,
     # scrapy acts as if the spider middleware does not modify the
@@ -78,6 +93,8 @@ class MyspiderDownloaderMiddleware:
         # - or return a Request object
         # - or raise IgnoreRequest: process_exception() methods of
         #   installed downloader middleware will be called
+        request.cookies = COOKIE_DIST
+        request.meta['proxy'] = "sock5://127.0.0.1:7980"
         return None
 
     def process_response(self, request, response, spider):
