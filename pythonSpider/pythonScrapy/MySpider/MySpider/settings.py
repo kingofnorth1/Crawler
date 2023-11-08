@@ -63,9 +63,10 @@ RANDOMIZE_DOWNLOAD_DELAY = True
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    "MySpider.pipelines.MyspiderPipeline": 300,
-#}
+ITEM_PIPELINES = {
+   "MySpider.pipelines.DbSpiderPipeline": 200,
+   "MySpider.pipelines.MySpiderPipeline": 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html

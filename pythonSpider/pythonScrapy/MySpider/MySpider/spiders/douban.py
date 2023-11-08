@@ -12,7 +12,8 @@ class DoubanSpider(scrapy.Spider):
 
     def start_requests(self):
         for page in range(10):
-            yield Request(url=f'https://movie.douban.com/top250?start={page * 25}&filter=')
+            yield Request(url=f'https://movie.douban.com/top250?start={page * 25}&filter=',
+                          meta={'proxy': 'sock5://127.0.0.1:51029'})
 
     def parse(self, response: HtmlResponse, **kwargs):
         sel = Selector(response)
