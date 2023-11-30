@@ -21,5 +21,6 @@ def get_cookie_dist():
         cookie_dist[key] = value
     print(cookie_dist)
     return cookie_dist
+print(get_cookie_dist())
 
 
