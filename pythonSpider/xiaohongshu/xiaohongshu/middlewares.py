@@ -9,7 +9,7 @@ from scrapy import signals, Request
 from itemadapter import is_item, ItemAdapter
 
 def get_cookie_dist():
-    cookie_str = 'abRequestId=65f0cc8e-f23b-578b-b365-d2e53c63cada; xsecappid=xhs-pc-web; a1=18c15c3a584cmn563hjqkvc6q7qanqnrvo0muwp4950000133051; webId=41ba17d09438474ff276f3508f6df38c; websectiga=2845367ec3848418062e761c09db7caf0e8b79d132ccdd1a4f8e64a11d0cac0d; gid=yYSy2SqDyJhSyYSy2Sq02lEUY4S6I2KqxVAT84jhSKAWA6280IAIF7888yqq82y8dDS4jqf0; web_session=040069b0e8138e12dbecf9ba52374b516591b5; webBuild=3.18.1; unread={%22ub%22:%226560bdd3000000003203b79e%22%2C%22ue%22:%2265470788000000001e029272%22%2C%22uc%22:25}; cacheId=12b48636-ce30-4be2-942e-c0b7925370df; sec_poison_id=9aa4f3fe-beac-41e0-8c84-484bcef3e418'
+    cookie_str = 'abRequestId=65f0cc8e-f23b-578b-b365-d2e53c63cada; xsecappid=xhs-pc-web; a1=18c15c3a584cmn563hjqkvc6q7qanqnrvo0muwp4950000133051; webId=41ba17d09438474ff276f3508f6df38c; websectiga=29098a4cf41f76ee3f8db19051aaa60c0fc7c5e305572fec762da32d457d76ae; gid=yYSy2SqDyJhSyYSy2Sq02lEUY4S6I2KqxVAT84jhSKAWA6280IAIF7888yqq82y8dDS4jqf0; web_session=040069b0e8138e12dbecf9ba52374b516591b5; unread={%22ub%22:%226560bdd3000000003203b79e%22%2C%22ue%22:%2265470788000000001e029272%22%2C%22uc%22:25}; cacheId=12b48636-ce30-4be2-942e-c0b7925370df; webBuild=3.18.2; sec_poison_id=88303e76-b3bd-48ff-b0d2-4a9dafd893ed'
     cookie_dist = {}
     for item in cookie_str.split('; '):
         key, value = item.split('=', maxsplit=1)
